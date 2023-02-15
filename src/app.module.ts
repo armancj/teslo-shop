@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsModule } from './products/products.module';
 import * as process from 'process';
+import { SeedModule } from './seed/seed.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import * as process from 'process';
       synchronize: true,
     }),
     ProductsModule,
+    SeedModule,
   ],
   controllers: [AppController],
   providers: [AppService],
