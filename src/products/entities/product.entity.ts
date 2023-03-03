@@ -26,6 +26,13 @@ export class Product {
   @Column('text')
   gender: string;
 
+  @BeforeInsert()
+  checkSlugInsert() {
+    if (!this.slug) this.slug = this.title;
+    this.slug = this.slug.toLowerCase().replace(/[^a-z0-9]+/g, '_');
+  }
+
+  //@BeforeUpdate()
   //tags: string[];
   // images: string[];
 }

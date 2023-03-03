@@ -12,32 +12,32 @@ import {
 export class CreateProductDto {
   @IsString()
   @MinLength(1)
-  readonly title: string;
+  title: string;
 
   @IsNumber()
   @IsPositive()
   @IsOptional()
-  readonly price?: number;
+  price?: number;
 
   @IsString()
   @IsOptional()
-  readonly description?: string;
+  description?: string;
 
   @IsString()
   @IsOptional()
-  readonly slug?: string;
+  slug?: string;
 
   @IsInt()
   @IsPositive()
   @IsOptional()
-  readonly stock?: number;
+  stock?: number;
 
   @IsIn(['men', 'women', 'kid', 'unisex'])
-  readonly gender: ValidGender;
+  gender: ValidGender;
 
   @IsString({ each: true })
   @IsArray()
-  readonly sizes: ValidSizes[];
+  sizes: ValidSizes[];
 
   //tags: string[];
 
