@@ -30,6 +30,7 @@ $ docker-compose up -d
 $ yarn install
 ```
 
+
 ## Running the app
 
 ```bash
@@ -41,6 +42,11 @@ $ yarn run start:dev
 
 # production mode
 $ yarn run start:prod
+```
+## Run seed
+#### 1. Running this: <a href="http://localhost:3000/api/seed" target="_blank">Seed data loader</a>
+```http request
+GET http://localhost:3000/api/seed
 ```
 
 ## Test
