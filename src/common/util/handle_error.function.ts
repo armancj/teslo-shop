@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { EntityNotFoundError } from 'typeorm';
 
-export function handleDBExceptions(error: any, message?: string): void {
+export function handleDBExceptions(error: any, message?: string): never {
   const logger = new Logger(handleDBExceptions.name);
   if (error?.code === Postgres_error_code.UniqueViolation)
     throw new ConflictException(error?.detail);

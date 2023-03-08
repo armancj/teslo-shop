@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
+
+<p>  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+<p align="center"></p>
+<h2 id="description">Description</h2>
+<p><a href="https://github.com/nestjs/nest">Nest</a> framework TypeScript starter repository.</p>
+<h2 id="installation">Installation</h2>
+<h3 id="clone-project">Clone project</h3>
+<pre><code class="lang-bash">$ gh repo <span class="hljs-keyword">clone</span> <span class="hljs-title">armancj</span>/teslo-shop
+</code></pre>
+<h4 id="1-clone-and-change-env-template-file-to-env-">1. Clone and change <code>.env.template</code> file to <code>.env</code></h4>
+<h4 id="2-insert-data-to-environment-variables-env-">2. Insert data to environment variables <code>.env</code></h4>
+<h4 id="3-raise-database">3. Raise database</h4>
+<pre><code class="lang-bash">$ docker-compose up <span class="hljs-_">-d</span>
+</code></pre>
+<h4 id="4-install-nodejs-dependence">4. Install NodeJS dependence</h4>
+<pre><code class="lang-bash">$ yarn <span class="hljs-keyword">install</span>
+</code></pre>
+<h2 id="running-the-app">Running the app</h2>
+<pre><code class="lang-bash"><span class="hljs-comment"># development</span>
+$ yarn <span class="hljs-keyword">run</span><span class="bash"> start
+</span>
+<span class="hljs-comment"># watch mode</span>
+$ yarn <span class="hljs-keyword">run</span><span class="bash"> start:dev
+</span>
+<span class="hljs-comment"># production mode</span>
+$ yarn <span class="hljs-keyword">run</span><span class="bash"> start:prod</span>
+</code></pre>
+<h2 id="run-seed">Run seed</h2>
+<h4 id="1-running-this-a-href-http-localhost-3000-api-seed-target-_blank-seed-data-loader-a-">1. Running this: <a href="http://localhost:3000/api/seed" target="_blank">Seed data loader</a></h4>
+<p>```http request
+  GET <a href="http://localhost:3000/api/seed">http://localhost:3000/api/seed</a></p>
+<pre><code>
+<span class="hljs-comment">## Test</span>
+
+```bash
+<span class="hljs-comment"># unit tests</span>
+$ yarn <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-built_in">test</span>
+</span>
+<span class="hljs-comment"># e2e tests</span>
+$ yarn <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-built_in">test</span>:e2e
+</span>
+<span class="hljs-comment"># test coverage</span>
+$ yarn <span class="hljs-keyword">run</span><span class="bash"> <span class="hljs-built_in">test</span>:cov</span>
+</code></pre><h2 id="support">Support</h2>
+<p>Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you&#39;d like to join them, please <a href="https://docs.nestjs.com/support">read more here</a>.</p>
+<h2 id="stay-in-touch">Stay in touch</h2>
+<ul>
+  <li>Author - <a href="https://kamilmysliwiec.com">Kamil Myśliwiec</a></li>
+  <li>Website - <a href="https://nestjs.com/">https://nestjs.com</a></li>
+  <li>Twitter - <a href="https://twitter.com/nestframework">@nestframework</a></li>
+</ul>
+<h2 id="license">License</h2>
+<p>Nest is <a href="LICENSE">MIT licensed</a>.</p>
+</html>
