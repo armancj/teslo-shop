@@ -39,9 +39,16 @@ export class CreateProductDto {
   @IsArray()
   sizes: ValidSizes[];
 
-  //tags: string[];
+  @IsOptional()
+  @IsString({ each: true })
+  @IsArray()
+  tags: string[];
 
-  //images: string[];
+  @IsOptional()
+  @IsString({ each: true })
+  @IsArray()
+  images?: string[];
+
   //type: ValidTypes;
 }
 
