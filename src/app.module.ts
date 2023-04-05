@@ -11,6 +11,7 @@ import { CommonModule } from './common/common.module';
 import { FilesModule } from './files/files.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { AuthModule } from './auth/auth.module';
+import { MessagesWsModule } from './messages-ws/messages-ws.module';
 import * as process from 'process';
 
 @Module({
@@ -33,8 +34,8 @@ import * as process from 'process';
     SeedModule,
     CommonModule,
     FilesModule,
-    ConfigModule.forRoot({ isGlobal: true }),
     AuthModule,
+    MessagesWsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

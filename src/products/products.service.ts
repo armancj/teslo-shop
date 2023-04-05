@@ -7,6 +7,7 @@ import { Repository } from 'typeorm';
 import { isUUID } from 'class-validator';
 import { GetAllQueryDto } from '../common/dto/get-all-query.dto';
 import { Product, ProductImage } from './entities';
+import { User } from "../auth/entities/user.entity";
 
 @Injectable()
 export class ProductsService {
@@ -18,13 +19,14 @@ export class ProductsService {
     private readonly productImageRepository: Repository<ProductImage>,
   ) {}
 
-  async create(createProductDto: CreateProductDto) {
+  async create(createProductDto: CreateProductDto, user: User) {
     const { images = [], ...productDetails } = createProductDto;
     const product = await this.productRepository.create({
       ...productDetails,
       images: images.map((image) =>
         this.productImageRepository.create({ url: image }),
       ),
+      user,
     });
     await this.productRepository.save(product).catch((error) => {
       handleDBExceptions(error);
@@ -53,7 +55,7 @@ export class ProductsService {
       });
   }
 
-  async update(id: string, updateProductDto: UpdateProductDto) {
+  async update(id: string, updateProductDto: UpdateProductDto, user: User) {
     //return this.productRepository.update(id, updateProductDto).catch((error) => {
     //       handleDBExceptions(error);
     //     });
@@ -68,6 +70,7 @@ export class ProductsService {
       id,
       ...updateProductDto,
       images,
+      user,
     });
     if (!productUpdate) {
       throw new NotFoundException('Product not found');
